@@ -2,6 +2,7 @@ import type { Link } from "../types";
 
 export const SITE = {
   title: "Grand Paradise",
+  logo: "/grand-paradise-logo.png",
   description: "A news website built with Astro",
   author: "Akanksha",
   url: "https://astro-news-six.vercel.app",
