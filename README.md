@@ -9,46 +9,6 @@ A news website built with Astro, designed to provide a modern and responsive new
 
 ![performances](./src/assets/images/Performances.png "Performances")
 
-## 🌐 Demo
-
-Explore the live demo here: [**Live Demo**](https://astro-news-six.vercel.app/)
-
-## 🚀 Installation
-
-Follow the steps below to set up and run the project locally:
-
-### Clone the Repository
-
-```bash
-git clone https://github.com/Mrahmani71/astro-news.git
-```
-
-### Install Dependencies
-
-```bash
-bun install
-```
-
-### Run Development Server
-
-```bash
-bun dev
-```
-
-### Running Keystatic CMS
-
-1. Rename `.env.example` to `.env`.
-
-2. Set `RUN_KEYSTATIC=true`.
-
-3. Start the development server:
-
-```bash
-   bun dev
-```
-
-4. Open `http://localhost:4321/keystatic` in your browser.
-
 ## ✨ Features
 
 ### Implemented Features

@@ -15,35 +15,35 @@ export const SITE = {
 
 export const NAVIGATION_LINKS: Link[] = [
   {
-    href: "/categories/technology",
-    text: "Technology",
+    href: "/categories/news",
+    text: "News",
   },
   {
-    href: "/categories/programming",
-    text: "Programming",
+    href: "/categories/guides",
+    text: "Guides",
   },
   {
-    href: "/categories/lifestyle",
-    text: "Lifestyle",
+    href: "/categories/reviews",
+    text: "Reviews",
   },
   {
-    href: "/categories/productivity",
-    text: "Productivity",
+    href: "/categories/features",
+    text: "Features",
   },
   {
-    href: "/categories/health",
-    text: "Health",
+    href: "/categories/videos",
+    text: "Videos",
   },
   {
-    href: "/categories/finance",
-    text: "Finance",
+    href: "/categories/interviews",
+    text: "Interviews",
   },
 ];
 
 export const OTHER_LINKS: Link[] = [
   {
     href: "/about",
-    text: "About us",
+    text: "About Us",
   },
   {
     href: "/authors",

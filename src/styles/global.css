@@ -38,7 +38,7 @@
 
   h1,
   h2 {
-    @apply font-serif;
+    @apply font-sans;
   }
 
   small,
