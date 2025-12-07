@@ -21,7 +21,7 @@ import Sun from "@/assets/svgs/sun.astro";
 <script is:inline>
   // Function to apply the initial theme and set the checkbox state
   function applyTheme() {
-    const theme = localStorage.getItem("astro-theme") || "light"; // Default to light theme
+    const theme = localStorage.getItem("astro-theme") || "dark"; // Default to light theme
     const themeController = document.querySelector(".theme-controller");
 
     // Update the checkbox state and apply the theme

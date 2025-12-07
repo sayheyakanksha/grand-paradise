@@ -1,0 +1,20 @@
+---
+import { getEntry, render } from "astro:content";
+import ListLayout from "@/layouts/list.astro";
+
+const entry = await getEntry("views", "privacy");
+
+if (!entry) {
+  return Astro.redirect("/404");
+}
+
+const [HEADER] = entry.data.blocks;
+const { Content } = await render(entry);
+---
+
+<ListLayout header={HEADER.title} entry={entry}>
+  <div class="prose prose-lg max-w-none dark:prose-invert"> 
+    <Content />
+  </div>
+  
+</ListLayout>

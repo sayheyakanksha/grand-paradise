@@ -22,8 +22,9 @@ const authors = authorsHandler.getAuthors(article.data.authors);
 ---
 
 <section
-  class="mb-8 flex flex-col lg:flex-col-reverse border-b border-b-base-300 lg:border-none pb-4 pt-0 lg:pt-6"
+  class="mb-8 flex flex-col lg:flex border-b border-b-base-300 lg:border-none pb-4 pt-0 lg:pt-6"
 >
+  <!-- Article Hero Image -->
   <div
     class="container px-0 max-w-5xl lg:mt-4 overflow-hidden aspect-[20/9] lg:rounded-md"
   >
@@ -36,6 +37,7 @@ const authors = authorsHandler.getAuthors(article.data.authors);
       class="w-full h-full object-center"
     />
   </div>
+  <!-- /Article Hero Image -->
   <div class="container my-4 max-w-5xl lg:hidden flex items-center gap-2">
     <ResourcesAdd size="16" />
     <a href={`/categories/${category.data.path}`} class="a-01 font-semibold"
@@ -43,11 +45,13 @@ const authors = authorsHandler.getAuthors(article.data.authors);
     >
   </div>
   <div class="container max-w-5xl">
-    <h1 class="text-3xl lg:text-4xl font-bold text-left text-pretty">
+    <h1 class="text-3xl lg:text-4xl pt-4 font-bold text-left text-pretty">
       {article.data.title}
     </h1>
     <p class="pt-2 text-pretty">{article.data.description}</p>
+    <!-- flex box for two rows below hero article -->
     <div class="flex flex-col gap-4 items-start mt-2 lg:mt-6 text-sm">
+    <!-- Category, date and reading time -->
       <div class="text-base-content/70 flex items-center gap-2">
         <span class="hidden lg:flex items-center gap-1">
           <ResourcesAdd size="15" />
@@ -79,7 +83,10 @@ const authors = authorsHandler.getAuthors(article.data.authors);
           <span>{readingTime}</span>
         </span>
       </div>
+      <!-- /Category, date and reading time -->
+
       <!-- TODO: fix name, href, avatar of author -->
+       <!-- Author block -->
       <div class="w-full flex flex-wrap gap-2 items-center justify-between">
         <div class="flex flex-wrap gap-4">
           {
@@ -111,7 +118,9 @@ const authors = authorsHandler.getAuthors(article.data.authors);
         </div>
         <Share text={article.data.title} />
       </div>
+      <!-- /Author block -->
     </div>
+    <!-- flex box for two rows below hero article -->
     
   </div>
 </section>

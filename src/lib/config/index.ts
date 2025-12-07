@@ -63,10 +63,6 @@ export const OTHER_LINKS: Link[] = [
     text: "Terms",
   },
   {
-    href: "/cookie-policy",
-    text: "Cookie Policy",
-  },
-  {
     href: "https://astro-news-six.vercel.app/rss.xml",
     text: "RSS",
   },
