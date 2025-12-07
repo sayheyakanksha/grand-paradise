@@ -24,7 +24,8 @@ export const articlesKs = collection({
       validation: { isRequired: true, length: { max: 160 } },
     }),
     title: fields.slug({
-      name: { label: "Title", validation: { length: { max: 60 } } },
+      name: { label: "Title", validation: { length: { max: 120 } } },
+      slug: { validation: { length: { max: 120 } } },
     }),
     cover: fields.image({
       label: "Cover",

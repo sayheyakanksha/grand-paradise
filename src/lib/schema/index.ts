@@ -8,7 +8,7 @@ export const articleSchema = (image: ImageFunction) =>
     isSubHeadline: z.boolean().default(false),
     cover: image(),
     covert_alt: z.string().optional(),
-    title: z.string().max(60, "Too long, max 60 characters"),
+    title: z.string().max(120, "Too long, max 120 characters"),
     description: z.string().max(160, "Too long, max 160 characters"),
     category: reference("categories"),
     authors: z.array(reference("authors")).min(1),
