@@ -61,7 +61,7 @@ const authors = authorsHandler.getAuthors(article.data.authors);
             class="hidden lg:block"
             datetime={normalizeDate(article.data.publishedTime)}
             >{
-              formatDate(normalizeDate(article.data.publishedTime), "long")
+              formatDate(normalizeDate(article.data.publishedTime), "short")
             }</time
           >
           <time
