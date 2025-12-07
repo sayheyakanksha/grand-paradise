@@ -1,4 +1,4 @@
-import { formatDistanceToNow, parseISO, format } from "date-fns";
+import { formatDistanceToNowStrict, parseISO, format } from "date-fns";
 
 const FORMAT_LONG = "EEEE, MMMM d, yyyy h:mm a zz";
 const FORMAT_SHORT = "MMMM dd, yyyy";
@@ -6,7 +6,7 @@ const FORMAT_SHORT = "MMMM dd, yyyy";
 const dateCache = new Map<string, Date>();
 
 export const getDateDistance = (date: string) =>
-  formatDistanceToNow(parseISO(date), {
+  formatDistanceToNowStrict(parseISO(date), {
     addSuffix: true,
   });
 
