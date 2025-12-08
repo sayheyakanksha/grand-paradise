@@ -8,9 +8,9 @@ const articles = articlesHandler.allArticles();
 
 <section class="container pt-12 pb-0 space-y-4" data-pagefind-ignore="all">
   <HeaderSection
-    title="Latest"
+    title="Game Reviews"
     link_title="View all"
-    link_url="/articles"
+    link_url="/categories/reviews"
   />
   <div class="grid grid-cols-1 md:grid-cols-3 gap-4 gap-y-6 md:grid-rows-2">
     {
@@ -19,4 +19,6 @@ const articles = articlesHandler.allArticles();
         .map((article, index) => <NewsCard article={article} index={index} />)
     }
   </div>
+  <br />
+  <br />
 </section>

@@ -19,6 +19,8 @@ const { article, readingTime } = Astro.props;
 
 const category = categoriesHandler.oneCategory(article.data.category.id);
 const authors = authorsHandler.getAuthors(article.data.authors);
+
+console.log("Article Header - Article Data:", article);
 ---
 
 <section
@@ -30,7 +32,7 @@ const authors = authorsHandler.getAuthors(article.data.authors);
   >
     <Picture
       src={article.data.cover}
-      alt="article"
+      alt={article.data.title}
       layout="full-width"
       loading={"eager"}
       formats={["avif", "webp"]}
@@ -100,7 +102,7 @@ const authors = authorsHandler.getAuthors(article.data.authors);
                     <div class="w-8 rounded-full">
                       <Image
                         src={author.data.avatar}
-                        alt="author"
+                        alt={author.data.name}
                         width={48}
                         height={48}
                         loading={"eager"}

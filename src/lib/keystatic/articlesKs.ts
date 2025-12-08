@@ -9,35 +9,52 @@ export const articlesKs = collection({
   schema: {
     isDraft: fields.checkbox({
       label: "Is this a draft?",
+      description:
+        "Marking this article as a draft will hide it from public view.",
       defaultValue: false,
     }),
     isMainHeadline: fields.checkbox({
       label: "Is this a main headline?",
+      description:
+        "Marking this article as a main headline will feature it prominently on the homepage.",
       defaultValue: false,
     }),
     isSubHeadline: fields.checkbox({
       label: "Is this a sub headline?",
+      description:
+        "Marking this article as a sub headline will feature it in the sub headline section on the homepage.",
       defaultValue: false,
     }),
-    description: fields.text({
-      label: "Description",
-      validation: { isRequired: true, length: { max: 160 } },
-    }),
     title: fields.slug({
-      name: { label: "Title", validation: { length: { max: 120 } } },
-      slug: { validation: { length: { max: 120 } } },
+      name: {
+        label: "Title",
+        description: "Max character limit -  120 characters.",
+        validation: { length: { max: 120 } },
+      },
+      slug: {
+        description: "Article page URL slug.",
+        validation: { length: { max: 120 } },
+      },
+    }),
+    description: fields.text({
+      label: "Short Description",
+      description: "Max character limit -  160 characters.",
+      validation: { isRequired: true, length: { max: 160 } },
     }),
     cover: fields.image({
       label: "Cover",
+      description: "The main image for the article.",
       directory: "src/assets/images/articles",
       publicPath: "@assets/images/articles/",
     }),
     category: fields.relationship({
       label: "Category",
+      description: "The category this article belongs to.",
       collection: "categories",
     }),
     publishedTime: fields.datetime({
       label: "Published Time",
+      description: "The date and time the article was published.",
       validation: { isRequired: true },
     }),
     authors: fields.array(
@@ -57,6 +74,7 @@ export const articlesKs = collection({
     ),
     content: fields.mdx({
       label: "Content",
+      description: "The main content of the article.",
       options: {
         image: {
           directory: "src/assets/images/articles",
