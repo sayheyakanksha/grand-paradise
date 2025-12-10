@@ -24,7 +24,7 @@ const { Content, remarkPluginFrontmatter } = await render(article);
     article={article}
     readingTime={remarkPluginFrontmatter.minutesRead}
   />
-  <ContentLayout>
+  <ContentLayout article={article}>
     <Content />
   </ContentLayout>
 </BaseLayout>

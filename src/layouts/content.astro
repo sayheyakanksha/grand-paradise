@@ -1,9 +1,15 @@
 ---
-// import AdSlot from "@/components/ads/ad-slot.astro";
 import ArticleRecsSideCard from "@/components/cards/articleRecsSideCard.astro";
 import { articlesHandler } from "@/lib/handlers/articles";
+import type { CollectionEntry } from "astro:content";
 
-const articles = articlesHandler.allArticles();
+type Props = {
+  article: CollectionEntry<"articles">;
+};
+
+const { article } = Astro.props;
+const allArticles = articlesHandler.allArticles();
+const articles = allArticles.filter((a) => a.id !== article.id).slice(0, 3);
 ---
 
 <section
@@ -21,15 +27,13 @@ const articles = articlesHandler.allArticles();
   </div>
   <div class="col-span-1 md:col-span-3">
     {
-      articles
-        .slice(0, 3)
-        .map((article, index) => (
-          <ArticleRecsSideCard
-            article={article}
-            isFirst={index === 0}
-            isLast={index === 2}
-          />
-        ))
+      articles.map((article, index) => (
+        <ArticleRecsSideCard
+          article={article}
+          isFirst={index === 0}
+          isLast={index === 2}
+        />
+      ))
     }
   </div>
 </section>
