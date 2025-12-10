@@ -15,6 +15,11 @@ export const authorsKs = collection({
       publicPath: "@assets/images/authors",
     }),
     bio: fields.text({ label: "Bio" }),
+    cover: fields.image({
+      label: "Cover Image",
+      directory: "src/assets/images/authors",
+      publicPath: "@assets/images/authors/",
+    }),
     social: fields.array(
       fields.object({
         name: fields.text({ label: "Name", validation: { isRequired: true } }),

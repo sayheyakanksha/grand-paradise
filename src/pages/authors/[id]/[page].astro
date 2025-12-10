@@ -7,6 +7,7 @@ import ListLayout from "@/layouts/list.astro";
 import WideCard from "@/components/cards/wideCard.astro";
 import Pagination from "@/components/shared/pagination.astro";
 import { getEntry } from "astro:content";
+import { Image, Picture } from "astro:assets";
 
 export const getStaticPaths = (({ paginate }) => {
   const allAuthors = authorsHandler.allAuthors();
@@ -37,6 +38,7 @@ if (!entry) {
 }
 
 const [HEADER] = entry.data.blocks;
+console.log(author);
 ---
 
 <ListLayout
@@ -49,6 +51,39 @@ const [HEADER] = entry.data.blocks;
     },
   }}
 >
+<!-- Author background cover image isn't live yet -->
+<!-- <section>
+  <div
+    class="container px-0 max-w-5xl lg:mt-4 overflow-hidden aspect-[20/9] lg:rounded-md"
+  >
+  <Picture
+      src={author.data.cover}
+      alt={author.data.name}
+      layout="full-width"
+      loading={"eager"}
+      formats={["avif", "webp"]}
+      class="w-full h-full object-center"
+    />
+    </div>
+</section> -->
+<!-- /Author background cover image isn't live yet -->
+<section>
+  <div class="mb-8 flex items-center gap-4">
+    <div class="w-16 rounded-full overflow-hidden">
+      <Image
+        src={author.data.avatar}
+        alt={author.data.name}
+        width={64}
+        height={64}
+        loading={"eager"}
+      />
+    </div>
+    <div>
+      <h2 class="text-2xl font-bold">{author.data.name}</h2>
+      <p class="text-base-content/70">{author.data.bio}</p>
+    </div>
+  </div>
+</section>
   <section class="flex-1">
     <ul class="flex flex-col gap-4">
       {

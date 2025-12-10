@@ -37,6 +37,7 @@ export const authorSchema = (Image: ImageFunction) =>
     job: z.string(),
     avatar: Image(),
     bio: z.string(),
+    cover: Image(),
     social: z.array(
       z.object({
         name: z.string(),

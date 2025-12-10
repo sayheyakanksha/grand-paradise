@@ -1,7 +1,6 @@
 ---
-import ContentLayout from "@/layouts/content.astro";
-import BaseLayout from "@/layouts/base.astro";
-import { getEntry, render } from "astro:content";
+import { getEntry } from "astro:content";
+import ListLayout from "@/layouts/list.astro";
 
 const entry = await getEntry("views", "about");
 
@@ -9,11 +8,17 @@ if (!entry) {
   return Astro.redirect("/404");
 }
 
-const { Content } = await render(entry);
+const [HEADER] = entry.data.blocks;
 ---
 
-<BaseLayout entry={entry}>
-  <ContentLayout>
-    <Content />
-  </ContentLayout>
-</BaseLayout>
+<ListLayout header={HEADER.title} entry={entry}>
+  <section  class="lg:w-2/3">
+    <div>
+      <!-- <h2 class="text-lg">About Us</h2> -->
+      <p>We wanted our own gaming website so we made one! If you have a problem with that, please email us and we'll never get back to you. He ha ha!</p>
+      <br />
+      <a class="link link-hover" href="mailto:general@grandparadise.com">general@grandparadise.com</a>
+    </div>
+
+ </section>
+</ListLayout>
