@@ -1,11 +1,16 @@
 ---
-import { NAVIGATION_LINKS, SOCIAL_LINKS, OTHER_LINKS, SITE } from "@/lib/config";
+import {
+  NAVIGATION_LINKS,
+  SOCIAL_LINKS,
+  OTHER_LINKS,
+  SITE,
+} from "@/lib/config";
 import Hashtag from "@/assets/svgs/hashtag.astro";
 import Icon from "../bases/icon.astro";
 ---
 
 <footer
-  class="footer border-t border-primary-content/80 dark:border-primary-content/20 py-6"
+  class="footer border-primary-content/80 dark:border-primary-content/20 border-t py-6"
 >
   <div class="container">
     <div class="flex flex-col gap-4">
@@ -23,7 +28,7 @@ import Icon from "../bases/icon.astro";
         </p>
       </aside>
       <nav
-        class="flex flex-col gap-4 lg:flex-row lg:flex-wrap text-base lg:text-sm font-semibold"
+        class="flex flex-col gap-4 text-base font-semibold lg:flex-row lg:flex-wrap lg:text-sm"
       >
         <a href="/" class="link link-hover">Home</a>
         <a href="/articles" class="link link-hover">Latest</a>
@@ -36,7 +41,7 @@ import Icon from "../bases/icon.astro";
         }
       </nav>
     </div>
-    <div class="divider w-full h-1"></div>
+    <div class="divider h-1 w-full"></div>
     <div class="flex flex-col gap-4">
       <nav>
         <div class="flex gap-4">
@@ -60,8 +65,7 @@ import Icon from "../bases/icon.astro";
           </ul>
         </div>
       </nav>
-      <nav class="flex flex-wrap gap-4 text-xs mt-2">
-        
+      <nav class="mt-2 flex flex-wrap gap-4 text-xs">
         {
           OTHER_LINKS.map(({ href, text, target }) => (
             <a href={href} class="link link-hover" target={target ?? "_self"}>
@@ -70,7 +74,11 @@ import Icon from "../bases/icon.astro";
           ))
         }
       </nav>
-      <p class="text-xs">© 2025 Grand Paradise, Inc. All rights reserved. No part of this website or its content may be reproduced without the copyright owner's permission.</p>
+      <p class="text-xs">
+        © 2025 Grand Paradise, Inc. All rights reserved. No part of this website
+        or its content may be reproduced without the copyright owner's
+        permission.
+      </p>
     </div>
   </div>
 </footer>

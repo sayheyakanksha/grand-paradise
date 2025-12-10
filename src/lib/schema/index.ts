@@ -27,7 +27,7 @@ export const categorySchema = z.object({
     .string()
     .regex(
       /^[a-z0-9]+(?:-[a-z0-9]+)*$/,
-      "The string must be a slug (only lowercase letters, numbers, and hyphens)."
+      "The string must be a slug (only lowercase letters, numbers, and hyphens).",
     ),
 });
 
@@ -43,7 +43,7 @@ export const authorSchema = (Image: ImageFunction) =>
         name: z.string(),
         url: z.string(),
         icon: z.string(),
-      })
+      }),
     ),
   });
 

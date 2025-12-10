@@ -30,7 +30,7 @@ export function modifiedTime() {
       try {
         const gitResult = execSync(
           `git log -1 --pretty="format:%cI" "${filepath}"`,
-          { stdio: ["ignore", "pipe", "ignore"] }
+          { stdio: ["ignore", "pipe", "ignore"] },
         )
           .toString()
           .trim();

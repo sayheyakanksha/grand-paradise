@@ -51,8 +51,8 @@ console.log(author);
     },
   }}
 >
-<!-- Author background cover image isn't live yet -->
-<!-- <section>
+  <!-- Author background cover image isn't live yet -->
+  <!-- <section>
   <div
     class="container px-0 max-w-5xl lg:mt-4 overflow-hidden aspect-[20/9] lg:rounded-md"
   >
@@ -66,24 +66,24 @@ console.log(author);
     />
     </div>
 </section> -->
-<!-- /Author background cover image isn't live yet -->
-<section>
-  <div class="mb-8 flex items-center gap-4">
-    <div class="w-16 rounded-full overflow-hidden">
-      <Image
-        src={author.data.avatar}
-        alt={author.data.name}
-        width={64}
-        height={64}
-        loading={"eager"}
-      />
+  <!-- /Author background cover image isn't live yet -->
+  <section>
+    <div class="mb-8 flex items-center gap-4">
+      <div class="w-16 overflow-hidden rounded-full">
+        <Image
+          src={author.data.avatar}
+          alt={author.data.name}
+          width={64}
+          height={64}
+          loading={"eager"}
+        />
+      </div>
+      <div>
+        <h2 class="text-2xl font-bold">{author.data.name}</h2>
+        <p class="text-base-content/70">{author.data.bio}</p>
+      </div>
     </div>
-    <div>
-      <h2 class="text-2xl font-bold">{author.data.name}</h2>
-      <p class="text-base-content/70">{author.data.bio}</p>
-    </div>
-  </div>
-</section>
+  </section>
   <section class="flex-1">
     <ul class="flex flex-col gap-4">
       {

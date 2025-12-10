@@ -1,6 +1,7 @@
 ---
 import { getEntry } from "astro:content";
 import ListLayout from "@/layouts/list.astro";
+import Authors from "@/pages/_home/authors.astro";
 
 const entry = await getEntry("views", "about");
 
@@ -12,13 +13,18 @@ const [HEADER] = entry.data.blocks;
 ---
 
 <ListLayout header={HEADER.title} entry={entry}>
-  <section  class="lg:w-2/3">
+  <section class="lg:w-2/3">
     <div>
       <!-- <h2 class="text-lg">About Us</h2> -->
-      <p>We wanted our own gaming website so we made one! If you have a problem with that, please email us and we'll never get back to you. He ha ha!</p>
+      <p>
+        We wanted our own gaming website so we made one! If you have a problem
+        with that, please email us and we'll never get back to you. He ha ha!
+      </p>
       <br />
-      <a class="link link-hover" href="mailto:general@grandparadise.com">general@grandparadise.com</a>
+      <a class="link link-hover" href="mailto:general@grandparadise.com"
+        >general@grandparadise.com</a
+      >
     </div>
-
- </section>
+  </section>
+  <!-- <Authors /> -->
 </ListLayout>

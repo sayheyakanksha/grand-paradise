@@ -7,7 +7,7 @@ const articlesCollection = (
 ).sort((a, b) =>
   new Date(b.data.publishedTime)
     .toISOString()
-    .localeCompare(new Date(a.data.publishedTime).toISOString())
+    .localeCompare(new Date(a.data.publishedTime).toISOString()),
 );
 
 export const articlesHandler = {
@@ -15,11 +15,11 @@ export const articlesHandler = {
 
   mainHeadline: () => {
     const article = articlesCollection.filter(
-      (article) => article.data.isMainHeadline === true
+      (article) => article.data.isMainHeadline === true,
     )[0];
     if (!article)
       throw new Error(
-        "Please ensure there is at least one item to display for the main headline."
+        "Please ensure there is at least one item to display for the main headline.",
       );
     return article;
   },
@@ -29,14 +29,13 @@ export const articlesHandler = {
     const subHeadlines = articlesCollection
       .filter(
         (article) =>
-          article.data.isSubHeadline === true &&
-          mainHeadline.id !== article.id
+          article.data.isSubHeadline === true && mainHeadline.id !== article.id,
       )
       .slice(0, 4);
 
     if (subHeadlines.length === 0)
       throw new Error(
-        "Please ensure there is at least one item to display for the sub headlines."
+        "Please ensure there is at least one item to display for the sub headlines.",
       );
     return subHeadlines;
   },

@@ -24,32 +24,7 @@ const category = categoriesHandler.oneCategory(article.data.category.id);
     isLast ? "border-b-0 pb-0" : "border-base-300 border-b",
   ]}
 >
-  <div class="flex flex-1 flex-col">
-    <div class="text-base-content/80 mb-2 flex text-xs lg:mt-auto">
-      <!-- <span class="text-primary dark:text-secondary">{category.data.title}</span
-      >
-      <Divider /> -->
-      <!-- This is category title -->
-      <span>{getDateDistance(remarkPluginFrontmatter.lastModified)}</span>
-    </div>
-    <div class="mb-1 flex gap-2">
-      <div class="flex-1">
-        <h3 class="mb-1 text-base lg:group-hover:underline">
-          <a href={`/articles/${article.id}`}>
-            <span class="pointer-events-none absolute inset-0 z-10"></span>
-            {article.data.title}
-          </a>
-        </h3>
-        <!-- <p
-          class="text-sm text-base-content/80 text-balance md:line-clamp-2 lg:line-clamp-3"
-        >
-          {article.data.description}
-        </p> -->
-      </div>
-    </div>
-  </div>
-
-  <div class="h-[125px] w-[165px] shrink-0 overflow-hidden md:h-full md:w-40">
+  <div class="w-[135px] shrink-0 overflow-hidden pr-2">
     <Image
       src={article.data.cover}
       alt={article.data.covert_alt
@@ -58,7 +33,17 @@ const category = categoriesHandler.oneCategory(article.data.category.id);
       loading="eager"
       widths={[120, 320]}
       layout="constrained"
+      position="top"
       class="h-full w-full rounded object-cover"
     />
+  </div>
+
+  <div class="flex flex-col justify-start">
+    <span class="mb-1 text-sm lg:group-hover:underline">
+      <a href={`/articles/${article.id}`}>
+        <span class="pointer-events-none absolute inset-0 z-10 text-xs"></span>
+        {article.data.title}
+      </a>
+    </span>
   </div>
 </article>

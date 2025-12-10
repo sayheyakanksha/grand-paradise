@@ -30,7 +30,7 @@ const getParsedDate = (dateString: string): Date => {
 
 export const formatDate = (
   date: string | Date,
-  formatType: "long" | "short" = "long"
+  formatType: "long" | "short" = "long",
 ) => {
   // Ensure that the date is a valid Date string
   const dateString = date instanceof Date ? date.toISOString() : date;
@@ -41,6 +41,6 @@ export const formatDate = (
   // Format the date based on the requested format
   return format(
     parsedDate,
-    formatType === "short" ? FORMAT_SHORT : FORMAT_LONG
+    formatType === "short" ? FORMAT_SHORT : FORMAT_LONG,
   );
 };

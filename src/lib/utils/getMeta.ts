@@ -12,13 +12,12 @@ const renderCache = new Map<string, any>();
 
 export const getMeta = async (
   collection: GetMetaCollection,
-  category?: string
+  category?: string,
 ): Promise<Meta | ArticleMeta> => {
   try {
     const collectionId = `${collection.collection}-${collection.id}`;
 
     if (collection.collection === "articles") {
-
       if (renderCache.has(collectionId)) {
         return renderCache.get(collectionId);
       }
@@ -39,7 +38,7 @@ export const getMeta = async (
           link: `${author.id}`,
         })),
         type: "article",
-      }
+      };
 
       renderCache.set(collectionId, meta);
 
@@ -47,17 +46,17 @@ export const getMeta = async (
     }
 
     if (collection.collection === "views") {
-
       const cacheKey = category ? `${collectionId}-${category}` : collectionId;
       if (renderCache.has(cacheKey)) {
         return renderCache.get(cacheKey);
       }
 
-      const title = collection.id === "categories" && category
-        ? `${capitalizeFirstLetter(category)} - ${SITE.title}`
-        : collection.id === "home"
-          ? SITE.title
-          : `${capitalizeFirstLetter(collection.data.title)} - ${SITE.title}`;
+      const title =
+        collection.id === "categories" && category
+          ? `${capitalizeFirstLetter(category)} - ${SITE.title}`
+          : collection.id === "home"
+            ? SITE.title
+            : `${capitalizeFirstLetter(collection.data.title)} - ${SITE.title}`;
 
       const meta: Meta = {
         title,
@@ -71,7 +70,9 @@ export const getMeta = async (
       return meta;
     }
 
-    throw new Error(`Invalid collection type: ${(collection as GetMetaCollection).collection}`);
+    throw new Error(
+      `Invalid collection type: ${(collection as GetMetaCollection).collection}`,
+    );
   } catch (error) {
     console.error(`Error generating metadata for ${collection.id}:`, error);
     throw error;

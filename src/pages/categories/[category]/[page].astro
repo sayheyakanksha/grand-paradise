@@ -15,7 +15,7 @@ export const getStaticPaths = (async ({ paginate }) => {
 
   return allCategories.flatMap((category) => {
     const filteredArticles = allArticles.filter(
-      (article) => article.data.category.id === category.id
+      (article) => article.data.category.id === category.id,
     );
     return paginate(filteredArticles, {
       params: { category: category.id },
@@ -40,7 +40,7 @@ if (!entry) {
 ---
 
 <ListLayout header={params.category} entry={entry}>
-  <ul class="flex flex-col gap-2 flex-1">
+  <ul class="flex flex-1 flex-col gap-2">
     {
       articles.map((article) => (
         <WideCard

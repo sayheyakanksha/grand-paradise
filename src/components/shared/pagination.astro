@@ -30,13 +30,13 @@ const adjustedStartPage = Math.max(1, endPage - maxVisibleButtons + 1);
 // Generate the pagination list based on the range
 const paginationList = Array.from(
   { length: endPage - adjustedStartPage + 1 },
-  (_, i) => adjustedStartPage + i
+  (_, i) => adjustedStartPage + i,
 );
 ---
 
 <section
   class:list={[
-    "flex items-center mx-auto mt-8",
+    "mx-auto mt-8 flex items-center",
     !prevUrl && !nextUrl ? "hidden" : "",
   ]}
 >

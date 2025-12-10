@@ -7,18 +7,21 @@ import ThemeController from "../bases/theme-controller.astro";
 ---
 
 <div
-  class="navbar border-b border-primary-content/80 dark:border-primary-content/20"
+  class="navbar border-primary-content/80 dark:border-primary-content/20 border-b"
 >
   <div class="navbar-start lg:w-1/2">
     <MenuDropdown />
-    <a class="flex items-center gap-2 text-xl px-2 text-nowrap lg:hidden" href="/">
+    <a
+      class="flex items-center gap-2 px-2 text-xl text-nowrap lg:hidden"
+      href="/"
+    >
       <img src={SITE.logo} alt="Logo" width="32" height="32" />
       {SITE.title}
     </a>
   </div>
   <div class="navbar-center hidden lg:flex">
     <img src={SITE.logo} alt="Logo" width="32" height="32" />
-    <a class="text-xl px-2" href="/">{SITE.title}</a>
+    <a class="px-2 text-xl" href="/">{SITE.title}</a>
   </div>
   <div class="navbar-end">
     <a class="btn btn-ghost btn-circle" href="/search" aria-label="Search">

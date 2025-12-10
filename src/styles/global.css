@@ -28,7 +28,7 @@
   }
   html {
     @apply h-full text-[16px];
-    scroll-behavior: smooth;
+    scroll-behavior: smooth; /* For article list smooth scrolling */
   }
 
   @media (min-width: 1024px) {
@@ -38,7 +38,7 @@
   }
 
   body {
-    @apply font-sans antialiased h-full;
+    @apply h-full font-sans antialiased;
   }
 
   h1,
@@ -75,6 +75,6 @@
 
 @layer components {
   .a-01 {
-    @apply hover:underline decoration-primary;
+    @apply decoration-primary hover:underline;
   }
 }

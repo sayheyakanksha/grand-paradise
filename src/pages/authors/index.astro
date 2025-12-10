@@ -22,7 +22,7 @@ const [HEADER, ATTENTION] = entry.data.blocks;
     <span>{ATTENTION.description}</span>
   </section> -->
   <section class="flex-1">
-    <ul class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-6 md:gap-4">
+    <ul class="grid grid-cols-2 gap-6 sm:grid-cols-3 md:gap-4 lg:grid-cols-4">
       {authors.map((author) => <AuthorCard author={author} />)}
     </ul>
   </section>
