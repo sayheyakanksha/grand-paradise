@@ -22,7 +22,34 @@ const articles = allArticles.filter((a) => a.id !== article.id).slice(0, 3);
       data-pagefind-body
     >
       <slot />
-      <br />
+      <!-- Review block only -->
+      {
+        article.data.category.id === "reviews" && (
+          <div class="grid grid-cols-4 gap-4">
+            <div class="col-span-4 bg-amber-400 p-2 text-lg font-bold">
+              {article.data.title}
+            </div>
+            <div class="col-span-3 bg-amber-950 p-4 text-base">
+              <>
+                <span class="font-semibold">TL;DR </span>
+                <br />
+              </>
+              {article.data.tldr}
+            </div>
+            <div class="flex flex-col items-center gap-2 bg-amber-700 p-2 text-lg">
+              <span class="text-lg leading-none">
+                <span class="text-6xl leading-none">{article.data.score}</span>
+                /10
+              </span>
+              <span class="text-sm leading-none font-semibold">
+                {article.data.reviewedOn}
+              </span>
+            </div>
+            <br />
+          </div>
+        )
+      }
+      <!-- /Review block only -->
     </article>
   </div>
   <div class="col-span-1 md:col-span-3">

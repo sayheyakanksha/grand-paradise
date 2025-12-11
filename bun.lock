@@ -10,7 +10,8 @@
         "@astrojs/react": "4.4.2",
         "@astrojs/rss": "4.0.14",
         "@astrojs/sitemap": "3.6.0",
-        "@fontsource-variable/source-serif-4": "^5.2.8",
+        "@fontsource-variable/eb-garamond": "^5.2.7",
+        "@fontsource-variable/manrope": "^5.2.8",
         "@fontsource/source-sans-pro": "^5.2.5",
         "@keystatic/astro": "^5.0.6",
         "@keystatic/core": "^0.5.48",
@@ -228,7 +229,9 @@
 
     "@floating-ui/utils": ["@floating-ui/utils@0.2.10", "", {}, "sha512-aGTxbpbg8/b5JfU1HXSrbH3wXZuLPJcNEcZQFMxLs3oSzgtVu6nFPkbbGGUvBcUjKV2YyB9Wxxabo+HEH9tcRQ=="],
 
-    "@fontsource-variable/source-serif-4": ["@fontsource-variable/source-serif-4@5.2.9", "", {}, "sha512-PPcxjLFk/fS0WHg79pDM2YNvz61kC+oYZ5cWZZyCS0DHpJncmuYOuiZAsvj4tDxlWPBEvxxcRLQQNmSaRbPkqw=="],
+    "@fontsource-variable/eb-garamond": ["@fontsource-variable/eb-garamond@5.2.7", "", {}, "sha512-TbR+Pun4k5g85lgdxRNSbWka5vJgi9pzdFzFswgf7/7NRhKssvoumft1+ZGz3n91YYet96JcnjWrgPGGj6JTzg=="],
+
+    "@fontsource-variable/manrope": ["@fontsource-variable/manrope@5.2.8", "", {}, "sha512-nc9lOuCRz73UHnovDE2bwXUdghE2SEOc7Aii0qGe3CLyE03W1a7VnY5Z6euRiapiKbCkGS+eXbY3s/kvWeGeSw=="],
 
     "@fontsource/source-sans-pro": ["@fontsource/source-sans-pro@5.2.5", "", {}, "sha512-ypendqc4pYUc+EgF7qqPY9iVYEz1t/Qr03VojKxG/2g3dnpHa1B6DOlDxWQjQXDj5QrG6inEqGT0g+edjALZyg=="],
 

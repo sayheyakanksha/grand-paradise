@@ -4,6 +4,9 @@ import HeaderSection from "./headerSection.astro";
 import { articlesHandler } from "@/lib/handlers/articles";
 
 const articles = articlesHandler.allArticles();
+const reviewArticles = articles.filter(
+  (article) => article.data.category.id === "reviews",
+);
 ---
 
 <section class="container space-y-4 pt-12 pb-0" data-pagefind-ignore="all">
@@ -14,7 +17,7 @@ const articles = articlesHandler.allArticles();
   />
   <div class="grid grid-cols-1 gap-4 gap-y-6 md:grid-cols-3 md:grid-rows-2">
     {
-      articles
+      reviewArticles
         .slice(0, 6)
         .map((article, index) => <NewsCard article={article} index={index} />)
     }

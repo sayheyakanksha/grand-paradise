@@ -40,6 +40,7 @@ export const articlesKs = collection({
       label: "Short Description",
       description: "Max character limit -  160 characters.",
       validation: { isRequired: true, length: { max: 160 } },
+      multiline: true,
     }),
     cover: fields.image({
       label: "Cover",
@@ -81,6 +82,22 @@ export const articlesKs = collection({
           publicPath: "@assets/images/articles",
         },
       },
+    }),
+    score: fields.number({
+      label: "Score (Optional)",
+      description: "The review score of the article.",
+      validation: { isRequired: false },
+    }),
+    reviewedOn: fields.text({
+      label: "Reviewed On (Optional)",
+      description: "The platform on which you reviewed the game",
+      validation: { isRequired: false },
+    }),
+    tldr: fields.text({
+      label: "TL;DR (Optional)",
+      description: "Use it as a TL;DR for the article.",
+      validation: { isRequired: false },
+      multiline: true,
     }),
   },
 });
