@@ -1,4 +1,2 @@
 User-agent: *
 Allow: /
-
-Sitemap: https://astro-news-six.vercel.app/sitemap-index.xml
