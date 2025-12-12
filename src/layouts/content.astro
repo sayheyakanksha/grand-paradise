@@ -9,7 +9,11 @@ type Props = {
 
 const { article } = Astro.props;
 const allArticles = articlesHandler.allArticles();
-const articles = allArticles.filter((a) => a.id !== article.id).slice(0, 3);
+const latestArticles = allArticles
+  .filter((a) => a.id !== article.id)
+  .slice(0, 5)
+  .sort(() => Math.random() - 0.5)
+  .slice(0, 3);
 ---
 
 <section
@@ -54,7 +58,7 @@ const articles = allArticles.filter((a) => a.id !== article.id).slice(0, 3);
   </div>
   <div class="col-span-1 md:col-span-3">
     {
-      articles.map((article, index) => (
+      latestArticles.map((article, index) => (
         <ArticleRecsSideCard
           article={article}
           isFirst={index === 0}

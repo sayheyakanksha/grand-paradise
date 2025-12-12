@@ -33,7 +33,7 @@
 
   @media (min-width: 1024px) {
     html {
-      @apply text-[17px];
+      @apply text-[16px];
     }
   }
 
