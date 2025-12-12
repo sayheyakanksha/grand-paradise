@@ -3,6 +3,7 @@ import { Image } from "astro:assets";
 import type { CollectionEntry } from "astro:content";
 import { getDateDistance, normalizeDate } from "@/lib/utils/date";
 import Divider from "../bases/divider.astro";
+import { authorsHandler } from "@/lib/handlers/authors";
 
 type Props = {
   article: CollectionEntry<"articles">;
@@ -10,6 +11,7 @@ type Props = {
 };
 
 const { article, isLast } = Astro.props;
+const authors = authorsHandler.getAuthors(article.data.authors);
 ---
 
 <li
@@ -22,9 +24,6 @@ const { article, isLast } = Astro.props;
     ]}
   >
     <div class="flex-1 space-y-2">
-      <p class="text-base-content/60 pt-2 text-xs text-pretty">
-        {getDateDistance(normalizeDate(article.data.publishedTime))}
-      </p>
       <h3 class="text-xl font-semibold lg:group-hover:underline">
         <a href={`/articles/${article.id}`}>
           <span class="absolute inset-0 z-10"></span>
@@ -34,6 +33,44 @@ const { article, isLast } = Astro.props;
       <p class="text-base-content/80 max-w-xl text-pretty">
         {article.data.description}
       </p>
+      <div class="flex flex-wrap items-center gap-1">
+        <span class="text-xs">By</span>
+        {
+          authors.map((author, index) => (
+            <div class="flex items-center gap-1">
+              <a
+                href={`/authors/${author.id}`}
+                class="relative z-20 flex items-center gap-1"
+              >
+                {/* <div class="avatar">
+                  <div class="w-6 rounded-full">
+                    <Image
+                      src={author.data.avatar}
+                      alt={author.data.name}
+                      width={48}
+                      height={48}
+                      loading={"eager"}
+                      format="webp"
+                      layout="constrained"
+                      quality={80}
+                    />
+                  </div>
+                </div> */}
+                {/* <span class="">By</span> */}
+                <span class="text-xs font-semibold">
+                  {author.data.name}
+                  {index < authors.length - 1 && ","}
+                </span>
+              </a>
+            </div>
+          ))
+        }
+        <p class="text-xs">
+          — Published {
+            getDateDistance(normalizeDate(article.data.publishedTime))
+          }
+        </p>
+      </div>
     </div>
     <div class="aspect-video w-full pr-5 lg:w-60">
       <Image
