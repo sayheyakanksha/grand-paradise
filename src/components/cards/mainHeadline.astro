@@ -4,7 +4,7 @@ import type { CollectionEntry } from "astro:content";
 import { render } from "astro:content";
 import Divider from "@/components/bases/divider.astro";
 import { categoriesHandler } from "@/lib/handlers/categories";
-import { getDateDistance } from "@/lib/utils/date";
+import { getDateDistance, normalizeDate } from "@/lib/utils/date";
 
 type Props = {
   article: CollectionEntry<"articles">;
@@ -28,7 +28,7 @@ const category = categoriesHandler.oneCategory(article.data.category.id);
       loading={"eager"}
     />
   </div>
-  <div class="flex flex-col gap-2">
+  <div class="flex flex-col gap-1">
     <div>
       <h2
         class="text-xl font-semibold underline-offset-2 lg:group-hover:underline"
@@ -48,5 +48,9 @@ const category = categoriesHandler.oneCategory(article.data.category.id);
       <Divider />
       <span>{getDateDistance(remarkPluginFrontmatter.lastModified)}</span>
     </div> -->
+    <!-- This is published time -->
+    <span class="text-base-content/80 text-xs"
+      >{getDateDistance(normalizeDate(article.data.publishedTime))}</span
+    >
   </div>
 </article>

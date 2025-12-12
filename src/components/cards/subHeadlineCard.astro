@@ -3,7 +3,7 @@ import { Image } from "astro:assets";
 import type { CollectionEntry } from "astro:content";
 import Divider from "@/components/bases/divider.astro";
 import { render } from "astro:content";
-import { getDateDistance } from "@/lib/utils/date";
+import { getDateDistance, normalizeDate } from "@/lib/utils/date";
 import { categoriesHandler } from "@/lib/handlers/categories";
 
 type Props = {
@@ -25,13 +25,6 @@ const category = categoriesHandler.oneCategory(article.data.category.id);
   ]}
 >
   <div class="flex flex-1 flex-col">
-    <div class="text-base-content/80 mb-2 flex text-xs lg:mt-auto">
-      <!-- <span class="text-primary dark:text-secondary">{category.data.title}</span
-      >
-      <Divider /> -->
-      <!-- This is category title -->
-      <span>{getDateDistance(remarkPluginFrontmatter.lastModified)}</span>
-    </div>
     <div class="mb-1 flex gap-2">
       <div class="flex-1">
         <h3 class="mb-1 text-base lg:group-hover:underline">
@@ -46,6 +39,15 @@ const category = categoriesHandler.oneCategory(article.data.category.id);
           {article.data.description}
         </p> -->
       </div>
+    </div>
+    <div class="text-base-content/80 mb-2 flex text-xs lg:mt-auto">
+      <!-- <span class="text-primary dark:text-secondary">{category.data.title}</span
+      >
+      <Divider /> -->
+      <!-- This is last modified date -->
+      <!-- <span>{getDateDistance(remarkPluginFrontmatter.lastModified)}</span> -->
+      <!-- This is published time -->
+      <span>{getDateDistance(normalizeDate(article.data.publishedTime))}</span>
     </div>
   </div>
 

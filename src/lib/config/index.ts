@@ -63,11 +63,11 @@ export const OTHER_LINKS: Link[] = [
     text: "Terms",
   },
   {
-    href: "https://astro-news-six.vercel.app/rss.xml",
+    href: "/rss.xml",
     text: "RSS",
   },
   {
-    href: "https://astro-news-six.vercel.app/sitemap-index.xml",
+    href: "/sitemap-index.xml",
     text: "Sitemap",
   },
 ];
