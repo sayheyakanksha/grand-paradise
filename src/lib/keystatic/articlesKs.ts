@@ -1,11 +1,12 @@
 import { collection, fields } from "@keystatic/core";
+// import { block } from "@keystatic/core/content-components";
 
 export const articlesKs = collection({
   label: "Articles",
   slugField: "title",
   path: "src/content/articles/*/",
   format: { contentField: "content" },
-  entryLayout: "form",
+  entryLayout: "content",
   schema: {
     isDraft: fields.checkbox({
       label: "Is this a draft?",
