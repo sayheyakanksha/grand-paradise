@@ -9,19 +9,17 @@ const reviewArticles = articles.filter(
 );
 ---
 
-<section class="container space-y-4 pt-12 pb-0" data-pagefind-ignore="all">
+<section class="container mb-8 space-y-4 pt-12 pb-0" data-pagefind-ignore="all">
   <HeaderSection
     title="Game Reviews"
     link_title="View All"
     link_url="/categories/reviews"
   />
-  <div class="grid grid-cols-1 gap-4 gap-y-6 md:grid-cols-3 md:grid-rows-2">
+  <div class="grid grid-cols-1 gap-4 gap-y-6 md:grid-cols-3">
     {
       reviewArticles
         .slice(0, 6)
         .map((article, index) => <NewsCard article={article} index={index} />)
     }
   </div>
-  <br />
-  <br />
 </section>
