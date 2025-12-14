@@ -3,8 +3,7 @@ import { config } from "@keystatic/core";
 
 export default config({
   storage: {
-    kind: "github",
-    repo: "sayheyakanksha/grand-paradise",
+    kind: "local",
   },
   ui: {
     brand: {

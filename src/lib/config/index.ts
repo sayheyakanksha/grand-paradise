@@ -45,7 +45,7 @@ export const NAVIGATION_LINKS: Link[] = [
 export const OTHER_LINKS: Link[] = [
   {
     href: "/about",
-    text: "About Us",
+    text: "About",
   },
   {
     href: "/authors",
