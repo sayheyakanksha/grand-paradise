@@ -7,6 +7,7 @@ import {
 } from "@/lib/config";
 import Hashtag from "@/assets/svgs/hashtag.astro";
 import Icon from "../bases/icon.astro";
+import ThemedLogo from "@/components/bases/themed-logo.astro";
 ---
 
 <footer
@@ -16,9 +17,10 @@ import Icon from "../bases/icon.astro";
     <div class="flex flex-col gap-4">
       <aside class="flex items-center gap-2">
         <!-- <Hashtag /> -->
-        <img src={SITE.logo} alt="Logo" width="32" height="32" />
+        <a href="/"><ThemedLogo class="h-10 w-auto md:h-10" /></a>
+        <!-- <img src={SITE.logo} alt="Logo" class="h-10 w-auto" /> -->
         <p>
-          <strong class="text-lg">Grand Paradise</strong>
+          <!-- <strong class="text-lg">Beyond the Fog Gate</strong> -->
           <br />
           <!-- A news website built with <a
             class="underline"
@@ -75,8 +77,8 @@ import Icon from "../bases/icon.astro";
         }
       </nav>
       <p class="text-xs">
-        © 2025 Grand Paradise, Inc. All rights reserved. No part of this website
-        or its content may be reproduced without the copyright owner's
+        © 2025 Beyond the Fog Gate, Inc. All rights reserved. No part of this
+        website or its content may be reproduced without the copyright owner's
         permission.
       </p>
     </div>

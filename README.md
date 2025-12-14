@@ -1,4 +1,4 @@
-# Grand Paradise 📰
+# Beyond the Fog Gate 📰
 
 A news website built with Astro, designed to provide a modern and responsive news reading experience.
 

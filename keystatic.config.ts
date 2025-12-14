@@ -8,7 +8,7 @@ export default config({
   },
   ui: {
     brand: {
-      name: "Grand Paradise",
+      name: "Beyond the Fog Gate",
     },
     navigation: ["---", "articles", "---", "authors", "categories"],
   },

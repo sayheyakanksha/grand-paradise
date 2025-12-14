@@ -1,0 +1,26 @@
+---
+import { SITE } from "@/lib/config";
+
+interface Props {
+  class?: string;
+  width?: string | number;
+  height?: string | number;
+}
+
+const { class: className = "", width = 40, height = 40 } = Astro.props;
+---
+
+<img
+  src={SITE.logoDark}
+  alt={SITE.title}
+  class={`hidden dark:block ${className}`}
+  width={width}
+  height={height}
+/>
+<img
+  src={SITE.logo}
+  alt={SITE.title}
+  class={`block dark:hidden ${className}`}
+  width={width}
+  height={height}
+/>

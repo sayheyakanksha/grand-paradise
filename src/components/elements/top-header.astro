@@ -4,6 +4,7 @@ import Search01 from "@/assets/svgs/search-01.astro";
 import MenuDropdown from "./menu-dropdown.astro";
 import { SITE } from "@/lib/config";
 import ThemeController from "../bases/theme-controller.astro";
+import ThemedLogo from "../bases/themed-logo.astro";
 ---
 
 <div
@@ -15,13 +16,15 @@ import ThemeController from "../bases/theme-controller.astro";
       class="flex items-center gap-2 px-2 text-xl text-nowrap lg:hidden"
       href="/"
     >
-      <img src={SITE.logo} alt="Logo" width="32" height="32" />
-      {SITE.title}
+      <ThemedLogo class="h-12 w-auto" />
+      <!-- <img src={SITE.logo} alt="Logo" width="32" height="32" />
+      {SITE.title} -->
     </a>
   </div>
   <div class="navbar-center hidden lg:flex">
-    <img src={SITE.logo} alt="Logo" width="32" height="32" />
-    <a class="px-2 text-xl" href="/">{SITE.title}</a>
+    <a href="/"><ThemedLogo class="h-18 w-auto p-2" /></a>
+    <!-- <img src={SITE.logo} alt="Logo" class="h-18 w-auto p-2" /> -->
+    <!-- <a class="px-2 text-xl" href="/">{SITE.title}</a> -->
   </div>
   <div class="navbar-end">
     <a class="btn btn-ghost btn-circle" href="/search" aria-label="Search">

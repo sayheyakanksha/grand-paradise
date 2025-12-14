@@ -1,12 +1,13 @@
 import type { Link } from "../types";
 
 export const SITE = {
-  title: "Grand Paradise",
-  logo: "/grand-paradise-logo.png",
+  title: "Beyond the Fog Gate",
+  logo: "/bfg-light-logo.svg",
+  logoDark: "/bfg-dark-logo.svg",
   description: "A news website built with Astro",
   author: "Akanksha",
-  url: "https://astro-news-six.vercel.app",
-  github: "https://github.com/sayheyakanksha/grand-paradise",
+  url: "https://beyondthefoggate.com",
+  github: "https://github.com/sayheyakanksha/beyondthefoggate",
   locale: "en-US",
   dir: "ltr",
   charset: "UTF-8",
@@ -74,22 +75,22 @@ export const OTHER_LINKS: Link[] = [
 
 export const SOCIAL_LINKS: Link[] = [
   {
-    href: "https://www.facebook.com",
+    href: "https://facebook.com/beyondthefoggate",
     text: "Facebook",
     icon: "facebook",
   },
   {
-    href: "https://instagram.com",
+    href: "https://instagram.com/beyondthefoggate",
     text: "Instagram",
     icon: "instagram",
   },
   {
-    href: "httpe://www.linkedin.com",
+    href: "https://www.linkedin.com/company/beyond-the-fog-gate/",
     text: "LinkedIn",
     icon: "linkedin",
   },
   {
-    href: "https://twitter.com",
+    href: "https://twitter.com/beyondfoggate",
     text: "Twitter",
     icon: "newTwitter",
   },
