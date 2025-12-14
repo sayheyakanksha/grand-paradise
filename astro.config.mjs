@@ -22,9 +22,6 @@ if (RUN_KEYSTATIC === "true") {
 
 // https://astro.build/config
 export default defineConfig({
-  output: "server",
-  adapter: cloudflare(),
-
   site: SITE.url,
   base: SITE.basePath,
   markdown: {
