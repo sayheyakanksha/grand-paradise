@@ -19,10 +19,14 @@ const meta = await getMeta(entry);
 <html lang={SITE.locale} dir={SITE.dir}>
   <Head meta={meta} />
   <body class="flex flex-col">
-    <Header />
+    <div data-pagefind-ignore>
+      <Header />
+    </div>
     <main class="flex-1">
       <slot />
     </main>
-    <Footer />
+    <div data-pagefind-ignore>
+      <Footer />
+    </div>
   </body>
 </html>
