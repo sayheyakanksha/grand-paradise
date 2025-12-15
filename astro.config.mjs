@@ -9,7 +9,6 @@ import keystatic from "@keystatic/astro";
 import react from "@astrojs/react";
 import { loadEnv } from "vite";
 import pagefind from "astro-pagefind";
-import cloudflare from "@astrojs/cloudflare";
 
 const { RUN_KEYSTATIC } = loadEnv(import.meta.env.MODE, process.cwd(), "");
 
